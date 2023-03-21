@@ -3,7 +3,7 @@
     <description>This is a sample Lightning Message Channel for the Lightning Web Components Superbadge.</description>
     <isExposed>true</isExposed>
     <lightningMessageFields>
-        <description>This is the record Id that changed</description>
+        <description>This is the record Id of that changed</description>
         <fieldName>recordId</fieldName>
     </lightningMessageFields>
     <masterLabel>BoatMessageChannel</masterLabel>
