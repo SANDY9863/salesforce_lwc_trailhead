@@ -1,0 +1,38 @@
+<template>
+    <h2> Account Datatable</h2>
+    <lightning-input class="searchbar" label = "search" value ={keyword} onchange ={handleKeyWordChange}>
+    </lightning-input>
+    <lightning-combobox class ="combobox" name ="number of records" value ={recordsperpage} 
+    placeholder ={recordsperpage}
+    options ={comboboxoptions}
+    onchange ={handleComboBoxChange}>
+    </lightning-combobox>
+    <template if:true={accList}>
+        <lightning-datatable data={accList} columns={columns} key-field="Id">
+        </lightning-datatable>
+    </template>
+    <template if:true={error}>
+        {error}
+    </template>
+    <lightning-layout horizontal-align="space">
+        <lightning-layout-item flexibility="auto">
+            <lightning-button 
+                label="Previous" 
+                icon-name="utility:chevronleft" 
+                onclick={previousHandler}>
+            </lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto">
+            Page {page} of {totalPage}
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto">
+            <lightning-button 
+                label="Next" 
+                icon-name="utility:chevronright" 
+                icon-position="right"
+                onclick={nextHandler}>
+            </lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+    
+</template>

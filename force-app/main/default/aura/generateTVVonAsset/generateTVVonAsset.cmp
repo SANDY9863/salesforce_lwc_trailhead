@@ -1,0 +1,4 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickAction" access="global">
+    <aura:attribute name="recordId" type="String" />
+    <c:generateTVV recordId ="{!v.recordId}"  onrefresh="{!c.refreshAccount}" ></c:generateTVV>
+</aura:component>	

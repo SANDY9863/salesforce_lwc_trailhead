@@ -1,0 +1,56 @@
+<template>
+   <!-- <lightning-quick-action-panel header="Generate the hexa code for the Asset">   -->  
+   <!--    <lightning-button  label="GenerateRandomNum"  onclick={handleClick} disabled ={Buttontrue}></lightning-button>
+        --> 
+         
+       <template if:true={showConfirmDialog}>
+            <!--Modal Box Start-->
+            <div role="dialog" class="slds-modal slds-fade-in-open ">
+                <div class="slds-modal__container">
+                    <!--Modal Box Header Start-->
+                    <header class="slds-modal__header">
+                        <h1 class="slds-text-heading--medium">Confirmation</h1>
+                    </header>
+                    <!--Modal Box Header End-->
+                     
+                    <!--Modal Box Content Start-->
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <center><b>Are you sure you want to generate the random number?</b></center>
+                    </div>
+                    <!--Modal Box Content End-->
+                     
+                    <!--Modal Box Button Start-->
+                    <footer class="slds-modal__footer">
+                        <lightning-button name='No' label='No' onclick={handleConfirmDialogNo}></lightning-button>
+                        <lightning-button variant="brand" name='Yes' label='Yes' onclick={handleConfirmDialogYes}></lightning-button>
+                    </footer>
+                    <!--Modal Box Button End-->
+                </div>
+            </div>           
+        </template>
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="Acct">
+                <div key={Acct.Id}>
+                    <center><h4 key={Acct.Id}></h4><p><b>Display the value :</b>{Acct.Rating}</p></center> 
+                </div></template>
+                <div class="slds-notify slds-notify_alert slds-alert_warning" role="alert">
+                    <span class="slds-assistive-text">warning</span>
+                    <span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+                    </span>
+                    <h2>Your browser is outdated. Your Salesforce experience may be degraded.
+                    <a href="#">More Information</a>
+                    </h2>
+                    <div class="slds-notify__close">
+                    <button class="slds-button slds-button_icon slds-button_icon-small" title="Close">
+                    <span class="slds-assistive-text">Close</span>
+                    </button>
+                    </div>
+                    </div> 
+        </template>
+        
+     <!--   <div slot="footer">
+            <lightning-button variant="neutral" label="Cancel" onclick={closeQuickAction}
+ ></lightning-button>
+        </div> -->
+  <!--  </lightning-quick-action-panel> -->
+</template>
